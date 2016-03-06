@@ -48,15 +48,14 @@ angular.module('dudleyApp')
 		.then(function(response) {
 			var data = (response.data);
 			var routes = data.routes;
-			console.log(routes);
+			
 			for(var route in routes)
 			{
-				console.log(route);
-				var legs = route.legs;
+				var legs = routes[route].legs;
 				
 				for(var leg in legs)
 				{
-					console.log(leg.duration);					
+					console.log(legs[leg].duration.text);					
 				}			
 			}
 			//console.log(response.data);
