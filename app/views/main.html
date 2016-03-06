@@ -1,7 +1,34 @@
-<div class="jumbotron">
-  <h1>Bus App</h1>
-  <p> Buses/Subway on the {{line}} line are expected to arrive {{grace}} late</p>
-</div>
-
-
+<div class="panel panel-default">
+  <div class="panel-heading"><b>My Students</b> Let me see who might be late today! </div>
+  <div class="panel-body">
+    <p>Top delayed routes:</p>
+    <p>Buses/Subway on the {{line}} line are expected to arrive {{grace}} late.</p>
+  </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Route Status</th>
+        <th>Est. Walking Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jonny Fey</td>
+        <td><span class="label label-success">On Time</span></td>
+        <td>5 minutes</td>
+      </tr>
+      <tr>
+        <td>Tina Taylor</td>
+        <td><span class="label label-danger">Late</span></td>
+        <td>10 minutes</td>
+      </tr>
+      <tr>
+        <td>Edwin Lee</td>
+        <td><span class="label label-success">On Time</span></td>
+        <td>16 minutes</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
