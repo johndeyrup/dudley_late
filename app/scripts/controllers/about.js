@@ -42,9 +42,10 @@ angular.module('dudleyApp')
      $scope.submit = function() {
 		 
      	//console.log($scope.form);
-		//console.log($scope.form.destination);
+		console.log($scope.form.destination);
+		var schoolStop = $scope.form.destination;
 		$http
-		.post("https://maps.googleapis.com/maps/api/directions/json?origin=Cambridge,MA&destination=906%20Albany%20St,%20Boston,%20MA%2002119&&mode=walking&key=AIzaSyCj9eb9jWocUR9DIrXbahBui3xp8kErwn0")
+		.post("https://maps.googleapis.com/maps/api/directions/json?origin=" + schoolStop + "&destination=906%20Albany%20St,%20Boston,%20MA%2002119&&mode=walking&key=AIzaSyCj9eb9jWocUR9DIrXbahBui3xp8kErwn0")
 		.then(function(response) {
 			var data = (response.data);
 			var routes = data.routes;
