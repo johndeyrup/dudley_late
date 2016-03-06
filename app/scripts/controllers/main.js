@@ -14,7 +14,7 @@ angular.module('dudleyApp')
   	function expected_before_cutoff(expected_time) {
   		var school_start = new Date();
   		//School start is set to 8:30:00 pm today
-    	school_start.setHours(10,32,0);
+    	school_start.setHours(11,19,0);
     	var sch_dept = expected_time.sch_dep_dt;
     	var pred_dept = expected_time.pre_dt;
 		var sch_date = new Date(sch_dept*1000);

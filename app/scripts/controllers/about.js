@@ -16,6 +16,17 @@ angular.module('dudleyApp')
     .then(function(response) {
     	var routes = response.data.mode;
     	var mode;
+
+
+
+
+
+
+
+
+
+
+
 	    for (mode of routes) {
     		var route;
     		for (route of mode.route){
