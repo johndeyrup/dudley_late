@@ -37,12 +37,33 @@ angular.module('dudleyApp')
     $scope.modes = ["Subway", "Commuter Rail", "Bus", "Boat"];
     $scope.directions = ["Inbound", "Outbound"];
     
-    // $scope.form = {};
+     $scope.form = {};
 
-    // $scope.submit = function() {
-    // 	console.log($scope.form);
-    // 	$http
+     $scope.submit = function() {
+		 
+     	//console.log($scope.form);
+		//console.log($scope.form.destination);
+		$http
+		.post("https://maps.googleapis.com/maps/api/directions/json?origin=Cambridge,MA&destination=906%20Albany%20St,%20Boston,%20MA%2002119&&mode=walking&key=AIzaSyCj9eb9jWocUR9DIrXbahBui3xp8kErwn0")
+		.then(function(response) {
+			var data = (response.data);
+			var routes = data.routes;
+			console.log(routes);
+			for(var route in routes)
+			{
+				console.log(route);
+				var legs = route.legs;
+				
+				for(var leg in legs)
+				{
+					console.log(leg.duration);					
+				}			
+			}
+			//console.log(response.data);
+		});
+		
+     	//$http
     // 	.post("https://myserver.com", )
 
-    // }
+     };
   });
