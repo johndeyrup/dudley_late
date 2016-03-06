@@ -1,0 +1,51 @@
+<!-- <table class="table">
+	<tr>
+		<th>Mode</th>
+		<th>Route ID</th>
+		<th>Route Name</th>
+	</tr>
+	<tr ng-repeat="route in route_array">
+		<td>{{route[0]}}</td>
+		<td>{{route[1]}}</td>
+		<td>{{route[2]}}</td>
+	</tr>
+</table> -->
+<form class="form-submit form-horizontal" name="myForm" ng-submit="submit()">
+
+	<div class="form-group">
+		<label class="control-label col-lg-5" for="transport_mode">Transportation Mode</label>
+		<div class="col-lg-7">
+			<select class="form-control" name="transport_mode" ng-model="form.transport" ng-options="mode as mode for mode in modes">
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-lg-5" for="transport_line">Transportation Line</label>
+		<div class="col-lg-7">
+			<select class="form-control" name="transport_line" ng-model="form.transport_line" ng-options="route.route_id as route.route_name for route in route_array | filter : form.transport">
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group">
+			<label class="control-label col-lg-5" for="destination">Destination</label>
+			<div class="col-lg-7">
+				<select class="form-control" name="destination" ng-model="form.destination" ng-options="route.route_id as route.route_name for route in route_array">
+				</select>
+			</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-lg-5" for="inbound">Inbound/Outbound</label>
+		<div class="col-lg-7">
+			<select class="form-control" name="inbound" ng-model="form.inbound" ng-options="direction as direction for direction in directions">
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-lg-7 col-lg-offset-5">
+			<button type="submit" class="btn btn-default pull-right btn-lg">Submit</button>
+		</div>
+	</div>
+</form>
